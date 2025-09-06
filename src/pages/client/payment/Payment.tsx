@@ -8,7 +8,7 @@ const { Option } = Select;
 const Payment: React.FC = () => {
     const [form] = Form.useForm();
 
-    const onFinish = (values: any) => {
+    const onFinish = (values: { amount: number; method: string }) => {
         console.log('Payment values:', values);
     };
 
