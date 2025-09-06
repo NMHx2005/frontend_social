@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Card, Table, Tag, Button, Space, Typography, Row, Col, Statistic, Select, DatePicker, Input, AutoComplete } from 'antd';
-import { SearchOutlined, ReloadOutlined, EyeOutlined, DownloadOutlined, FilterOutlined } from '@ant-design/icons';
+import { Card, Table, Tag, Button, Space, Typography, Row, Col, Statistic, Select, DatePicker, AutoComplete } from 'antd';
+import { SearchOutlined, ReloadOutlined, EyeOutlined, DownloadOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 const { RangePicker } = DatePicker;
 const { Option } = Select;
 
 const Orders: React.FC = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
     const [filterType, setFilterType] = useState<string>('');
 
     const serviceTypes = [

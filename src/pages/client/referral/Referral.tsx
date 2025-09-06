@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Card, Row, Col, Typography, Button, Input, Table, Tag, Space, Statistic, Divider, Alert, QRCode } from 'antd';
+import { Card, Row, Col, Typography, Button, Input, Table, Tag, Space, Statistic, Alert, QRCode } from 'antd';
 import { CopyOutlined, ShareAltOutlined, GiftOutlined, UserAddOutlined, DollarOutlined } from '@ant-design/icons';
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Text } = Typography;
 
 const Referral: React.FC = () => {
     const [referralCode] = useState('HTDIGI2024');

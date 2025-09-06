@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Col, Button, Input, Select, Form, Typography, Divider, Space, Statistic } from 'antd';
+import { Card, Row, Col, Button, Input, Select, Form, Typography, Divider, Space } from 'antd';
 import { CreditCardOutlined, BankOutlined, WalletOutlined, CheckCircleOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;

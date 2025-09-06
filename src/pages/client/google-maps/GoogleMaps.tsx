@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Row, Col, Typography, Button, Input, Select, Form, Table, Tag, Space, Statistic, Tabs } from 'antd';
-import { GoogleOutlined, SearchOutlined, FlagOutlined, EyeOutlined, StarOutlined } from '@ant-design/icons';
+import { GoogleOutlined, FlagOutlined, EyeOutlined, StarOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
 const { TabPane } = Tabs;
 
 const GoogleMaps: React.FC = () => {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
     const reviewData = [
         {
