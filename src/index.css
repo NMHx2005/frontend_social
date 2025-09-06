@@ -1,0 +1,534 @@
+/* Reset và base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5715;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f0f2f5;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Ant Design overrides */
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-content {
+  background: #f0f2f5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+/* Main Layout Responsive */
+.main-layout {
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-layout.collapsed {
+  margin-left: 80px;
+}
+
+/* Responsive Layout */
+@media (min-width: 993px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ant-layout-content {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-layout {
+    margin-left: 0 !important;
+  }
+  
+  .ant-layout-sider {
+    position: fixed !important;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 280px !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .ant-layout-sider.ant-layout-sider-collapsed {
+    width: 0 !important;
+    min-width: 0 !important;
+    transform: translateX(-100%);
+  }
+  
+  .ant-layout-content {
+    padding: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Mobile menu toggle */
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1001;
+    display: block !important;
+  }
+
+  .ant-layout-sider.mobile-open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 8px !important;
+  }
+
+  /* Responsive cards */
+  .ant-card {
+    margin-bottom: 12px !important;
+  }
+
+  /* Responsive statistics */
+  .ant-statistic-title {
+    font-size: 12px !important;
+  }
+
+  .ant-statistic-content {
+    font-size: 18px !important;
+  }
+
+  /* Responsive tables */
+  .ant-table-thead > tr > th {
+    padding: 8px 4px !important;
+    font-size: 12px !important;
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 8px 4px !important;
+    font-size: 12px !important;
+  }
+
+  /* Responsive forms */
+  .ant-form-item-label {
+    padding-bottom: 4px !important;
+  }
+
+  .ant-form-item-label > label {
+    font-size: 12px !important;
+  }
+
+  /* Responsive buttons */
+  .ant-btn {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Responsive text */
+  .ant-typography h1 {
+    font-size: 24px !important;
+  }
+
+  .ant-typography h2 {
+    font-size: 20px !important;
+  }
+
+  .ant-typography h3 {
+    font-size: 18px !important;
+  }
+
+  .ant-typography h4 {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ant-layout-sider {
+    width: 100vw !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .ant-layout-sider.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .ant-layout-content {
+    margin-left: 0 !important;
+    padding: 8px !important;
+  }
+
+  /* Mobile specific styles */
+  .ant-card-head {
+    padding: 0 12px !important;
+  }
+
+  .ant-card-body {
+    padding: 12px !important;
+  }
+
+  /* Mobile table scroll */
+  .ant-table-wrapper {
+    overflow-x: auto !important;
+  }
+
+  .ant-table {
+    min-width: 600px !important;
+  }
+
+  /* Mobile form adjustments */
+  .ant-form-item {
+    margin-bottom: 12px !important;
+  }
+
+  /* Mobile button groups */
+  .ant-space {
+    flex-wrap: wrap !important;
+  }
+
+  /* Mobile statistics */
+  .ant-statistic-content-value {
+    font-size: 16px !important;
+  }
+
+  /* Mobile cards in grid */
+  .ant-col {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Client Layout Styles */
+.client-layout {
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu-item {
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.active-menu-item {
+  background: #ffd700 !important;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.user-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Prevent text overflow */
+.ant-layout-sider .ant-typography {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Smooth transitions */
+.ant-layout-sider {
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.ant-layout-content {
+  transition: margin-left 0.3s ease;
+}
+
+/* Fix for collapsed state */
+.ant-layout-sider-collapsed .sidebar-menu-item {
+  justify-content: center;
+  padding: 8px !important;
+}
+
+.ant-layout-sider-collapsed .sidebar-menu-item span {
+  display: none;
+}
+
+/* Performance optimizations */
+.ant-layout-sider {
+  will-change: width, transform;
+}
+
+.sidebar-menu-item {
+  will-change: background-color, color;
+}
+
+/* Custom Ant Design Menu Styles */
+.ant-layout-sider .ant-menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title {
+  color: white !important;
+  padding-left: 20px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title .ant-menu-item-icon {
+  color: white !important;
+  border: 1px solid white !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title .ant-menu-title-content {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title .anticon {
+  color: white !important;
+}
+
+.ant-layout-sider .ant-menu-sub {
+  background: transparent !important;
+}
+
+.ant-layout-sider .ant-menu-item {
+  color: white !important;
+  padding-left: 40px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+}
+
+.ant-layout-sider .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected {
+  background: #ffd700 !important;
+  color: #000 !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected:hover {
+  background: #ffd700 !important;
+  color: #000 !important;
+}
+
+.ant-layout-sider .ant-menu-item a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected a {
+  color: #000 !important;
+}
+
+/* Enhanced active and hover states */
+.ant-layout-sider .ant-menu-item {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.ant-layout-sider .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  transform: translateX(2px) !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected {
+  background: #ffd700 !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ff6b35;
+  border-radius: 0 2px 2px 0;
+}
+
+.ant-layout-sider .ant-menu-item-selected:hover {
+  background: #ffd700 !important;
+  color: #000 !important;
+  transform: translateX(0) !important;
+}
+
+/* Submenu title hover effects */
+.ant-layout-sider .ant-menu-submenu-title {
+  transition: all 0.3s ease !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  transform: translateX(2px) !important;
+}
+
+/* Collapsed menu styles */
+.ant-layout-sider-collapsed .ant-menu-submenu-title {
+  padding-left: 20px !important;
+  text-align: center !important;
+}
+
+.ant-layout-sider-collapsed .ant-menu-submenu-title .ant-menu-title-content {
+  display: none !important;
+}
+
+.ant-layout-sider-collapsed .ant-menu-submenu-title .anticon:last-child {
+  display: none !important;
+}
+
+/* Custom classes matching the HTML structure */
+._side-bar-wrapper_127vg_1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+._logo-side-bar_1s0em_1 {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+._logo_1s0em_1 {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+._menu-wrapper_155kj_1 {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 120px;
+}
+
+._profile-wrapper_5p4lf_1 {
+  padding: 15px;
+}
+
+._profile-content_5p4lf_6 {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+._name_5p4lf_19 {
+  margin: 0 0 5px 0;
+  color: #1890ff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+._type_5p4lf_28 {
+  margin: 0 0 5px 0;
+  color: #666;
+  font-size: 12px;
+}
+
+._number_5p4lf_34 {
+  margin: 0;
+  color: #1890ff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+._profile-menu-item_5p4lf_39 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  color: #1890ff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+._profile-menu-item_5p4lf_39:hover {
+  background: rgba(24, 144, 255, 0.1);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 -8px;
+}
+
+/* Collapsed state adjustments */
+.ant-layout-sider-collapsed ._logo_1s0em_1 {
+  width: 40px;
+  height: 40px;
+}
+
+.ant-layout-sider-collapsed ._menu-wrapper_155kj_1 {
+  padding-bottom: 20px;
+}
